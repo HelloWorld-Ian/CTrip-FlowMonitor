@@ -1,0 +1,24 @@
+[
+  {
+    "name": "subjectTest",
+    "span": 60,
+    "splits": 5,
+    "timeUnit": "SECOND",
+    "instantSubscribe": [
+      {
+        "name": "rule1",
+        "strategy": "MORE_THAN",
+        "threshold": 5
+      }
+    ],
+    "scheduleSubscribe": [
+      {
+        "name": "rule2",
+        "strategy": "MORE_THAN",
+        "threshold": 10,
+        "interval": 30,
+        "timeUnit": "SECOND"
+      }
+    ]
+  }
+]
