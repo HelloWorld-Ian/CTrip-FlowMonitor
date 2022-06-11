@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <!--Console-->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--CLog-->
+    <appender name="CLog" class="com.ctrip.framework.clogging.agent.appender.CLoggingTagAppender">
+    </appender>
+
+    <logger name="com.ctrip.ibu" level="INFO" additivity="false">
+        <appender-ref ref="CLog"/>
+    </logger>
+
+    <root level="ERROR">
+        <appender-ref ref="CLog"/>
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
